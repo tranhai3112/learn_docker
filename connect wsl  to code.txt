@@ -1,0 +1,37 @@
+- bị lỗi quyền khi chạy docker ps ở unbuntu (wsl)
+
+sudo groupadd docker
+sudo usermod -aG docker ${USER}
+su - ${USER}
+
+nếu wsl k tìm được docker -> vào setting docker bật ubuntu lên -> k có ubuntu thì chạy
+wsl.exe --set-version ubuntu 2 -> bật lại ở docker setting
+
+
+- cài wsl cli vào vscode
+
+F1 -> chọn new wsl using distro -> unbuntu -> xong.
+
+
+- mở project wsl trên cmd window
+code --remote wsl+Ubuntu /home/jim/projects/c
+
+
+- cấp quyền cho laravel 
+sudo chmod -R o+w src/storage src/bootstrap/cache
+
+
+- khi sửa db,... 
+sudo chown -R hai /home/hai/laravel-wsl
+
+
+- sửa lỗi k fascade php:
+cập nhật php image version
+
+
+thêm quyền cho other user có thể ghi log
+sudo chmod -R o+w src/storage src/bootstrap/cache
+
+- sửa lỗi k sửa đc file wsl tới container
+
+sudo chown -R hai /home/hai/laravel-wsl

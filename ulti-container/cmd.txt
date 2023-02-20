@@ -1,0 +1,9 @@
+chạy trên container đang chạy
+docker run -it -d -v "%cd%":/app d1
+docker exec -it 23a npm init
+
+chạy trên container chưa chạy
+docker run -it --rm -v "%cd%":/app d1 npm init
+
+chạy với docker-compose 
+docker-compose run -it --rm npm init

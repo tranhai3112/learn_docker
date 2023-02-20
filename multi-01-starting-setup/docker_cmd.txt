@@ -1,0 +1,6 @@
+mongodb
+docker run -d --rm --name mongodb -v mongo-data:/data/db -e MONGO_INITDB_ROOT_USERNAME=hai -e MONGO_INITDB_ROOT_PASSWORD=secret --network goal-net  mongo
+backend
+docker run -d --network goal-net --env-file ./.env -p 80:80 --rm --name goal-be -v "%cd%":/app -v logs:/app/logs -v /app/node_modules dbce
+frontend
+docker run --env-file ./.env -p 3000:3000 --rm --name goal-fe -v "%cd%/src":/app/src -it goal-fe
